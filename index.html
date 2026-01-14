@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+<title>RTIRL Bottom Right Cells</title>
+<style>
+  html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    overflow: hidden;
+    font-family: Open Sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  /* 1920x1080 design surface */
+  #stage {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1920px;
+    height: 1080px;
+    transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+  }
+
+  /* Bottom-right cluster */
+  #cluster {
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+
+    /* Smaller cells */
+    width: 920px;
+    height: 64px;
+
+    padding: 10px;
+    background: rgba(0,0,0,0.35);
+    border-radius: 18px;
+    box-shadow: 0 10px 26px rgba(0,0,0,0.45);
+  }
+
+  .cell {
+    position: relative;
+    border-radius: 12px;
+    background: rgba(0,0,0,0.20);
+    overflow: hidden;
+  }
+
+  iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: transparent;
+    pointer-events: none;
+  }
+</style>
+</head>
+
+<body>
+  <div id="stage">
+    <div id="cluster">
+      <div class="cell"><iframe src="https://overlays.rtirl.com/neighborhood.html?key=nb6dt2kjfeub3423&lang=en&format=%24%7Bdata.neighborhood%20%3F%20data.neighborhood.text%20%2B%20'%2C%20'%20%3A%20''%7D%24%7Bdata.place%20%3F%20data.place.text%20%3A%20''%7D&css=color%3A%20rgba%28255%2C255%2C0%2C1%29%3B%0Afont-size%3A%2020px%3B%0Afont-family%3A%20Open%20Sans%3B%0Afont-weight%3A%20normal%3B%0Abackground-color%3A%20rgba%280%2C0%2C0%2C0%29%3B%0Atext-align%3A%20center%3B%0Adisplay%3A%20flex%3B%0Aalign-items%3A%20center%3B%0Ajustify-content%3A%20center%3B%0Awidth%3A%20100%25%3B%0Aheight%3A%20100%25%3B%0Apadding%3A%200px%3B%0Amargin%3A%200px%3B"></iframe></div>
+      <div class="cell"><iframe src="https://overlays.rtirl.com/speed/mph.html?key=nb6dt2kjfeub3423&css=color%3A%20rgba%28255%2C255%2C0%2C1%29%3B%0Afont-size%3A%2020px%3B%0Afont-family%3A%20Open%20Sans%3B%0Afont-weight%3A%20normal%3B%0Abackground-color%3A%20rgba%280%2C0%2C0%2C0%29%3B%0Atext-align%3A%20center%3B%0Adisplay%3A%20flex%3B%0Aalign-items%3A%20center%3B%0Ajustify-content%3A%20center%3B%0Awidth%3A%20100%25%3B%0Aheight%3A%20100%25%3B%0Apadding%3A%200px%3B%0Amargin%3A%200px%3B"></iframe></div>
+      <div class="cell"><iframe src="https://overlays.rtirl.com/datetime/luxon.html?key=nb6dt2kjfeub3423&lang=en&format=tt&css=color%3A%20rgba%28255%2C255%2C0%2C1%29%3B%0Afont-size%3A%2020px%3B%0Afont-family%3A%20Open%20Sans%3B%0Afont-weight%3A%20normal%3B%0Abackground-color%3A%20rgba%280%2C0%2C0%2C0%29%3B%0Atext-align%3A%20center%3B%0Adisplay%3A%20flex%3B%0Aalign-items%3A%20center%3B%0Ajustify-content%3A%20center%3B%0Awidth%3A%20100%25%3B%0Aheight%3A%20100%25%3B%0Apadding%3A%200px%3B%0Amargin%3A%200px%3B"></iframe></div>
+      <div class="cell"><iframe src="https://overlays.rtirl.com/weather/temperature/F.html?key=nb6dt2kjfeub3423&css=color%3A%20rgba%28255%2C255%2C0%2C1%29%3B%0Afont-size%3A%2020px%3B%0Afont-family%3A%20Open%20Sans%3B%0Afont-weight%3A%20normal%3B%0Abackground-color%3A%20rgba%280%2C0%2C0%2C0%29%3B%0Atext-align%3A%20center%3B%0Adisplay%3A%20flex%3B%0Aalign-items%3A%20center%3B%0Ajustify-content%3A%20center%3B%0Awidth%3A%20100%25%3B%0Aheight%3A%20100%25%3B%0Apadding%3A%200px%3B%0Amargin%3A%200px%3B"></iframe></div>
+      <div class="cell"><iframe src="https://overlays.rtirl.com/distance/miles.html?key=nb6dt2kjfeub3423&css=color%3A%20rgba%28255%2C255%2C0%2C1%29%3B%0Afont-size%3A%2020px%3B%0Afont-family%3A%20Open%20Sans%3B%0Afont-weight%3A%20normal%3B%0Abackground-color%3A%20rgba%280%2C0%2C0%2C0%29%3B%0Atext-align%3A%20center%3B%0Adisplay%3A%20flex%3B%0Aalign-items%3A%20center%3B%0Ajustify-content%3A%20center%3B%0Awidth%3A%20100%25%3B%0Aheight%3A%20100%25%3B%0Apadding%3A%200px%3B%0Amargin%3A%200px%3B"></iframe></div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      var stage = document.getElementById('stage');
+      var baseW = 1920, baseH = 1080;
+
+      function scale() {
+        var w = window.innerWidth || document.documentElement.clientWidth || baseW;
+        var h = window.innerHeight || document.documentElement.clientHeight || baseH;
+        var s = Math.min(w / baseW, h / baseH);
+        stage.style.transform = 'scale(' + s + ')';
+        stage.style.webkitTransform = 'scale(' + s + ')';
+      }
+
+      window.addEventListener('resize', scale);
+      window.addEventListener('orientationchange', scale);
+      scale();
+      setTimeout(scale, 200);
+    })();
+  </script>
+</body>
+</html>
