@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
-<title>RTIRL Bottom Right Cells - City State Country</title>
+<title>RTIRL Bottom Right Cells - Robust Location</title>
 <style>
   html, body {
     margin: 0;
@@ -62,7 +62,7 @@
 <body>
   <div id="stage">
     <div id="cluster">
-      <div class="cell"><iframe src="https://overlays.rtirl.com/neighborhood.html?key=nb6dt2kjfeub3423&lang=en&format=%24%7Bdata.city%20%3F%20data.city.text%20%3A%20''%7D%24%7Bdata.state%20%3F%20'%2C%20'%20%2B%20data.state.code%20%3A%20''%7D%24%7Bdata.country%20%3F%20'%2C%20'%20%2B%20data.country.code%20%3A%20''%7D&css=color%3A%20rgba%28255%2C255%2C0%2C1%29%3B%0Afont-size%3A%2020px%3B%0Afont-family%3A%20Open%20Sans%3B%0Afont-weight%3A%20normal%3B%0Abackground-color%3A%20rgba%280%2C0%2C0%2C0%29%3B%0Atext-align%3A%20center%3B%0Aline-height%3A%201.2%3B"></iframe></div>
+      <div class="cell"><iframe src="https://overlays.rtirl.com/neighborhood.html?key=nb6dt2kjfeub3423&lang=en&format=%24%7Bdata.city%20%3F%20data.city.text%20%3A%20data.place.text%7D%24%7Bdata.state%20%3F%20'%2C%20'%20%2B%20(data.state.code%20%7C%7C%20data.state.text)%20%3A%20''%7D%24%7Bdata.country%20%3F%20'%2C%20'%20%2B%20(data.country.code%20%7C%7C%20data.country.text)%20%3A%20''%7D&css=color%3A%20rgba%28255%2C255%2C0%2C1%29%3B%0Afont-size%3A%2020px%3B%0Afont-family%3A%20Open%20Sans%3B%0Afont-weight%3A%20normal%3B%0Abackground-color%3A%20rgba%280%2C0%2C0%2C0%29%3B%0Atext-align%3A%20center%3B%0Aline-height%3A%201.2%3B"></iframe></div>
       <div class="cell"><iframe src="https://overlays.rtirl.com/speed/mph.html?key=nb6dt2kjfeub3423&css=color%3A%20rgba%28255%2C255%2C0%2C1%29%3B%0Afont-size%3A%2020px%3B%0Afont-family%3A%20Open%20Sans%3B%0Afont-weight%3A%20normal%3B%0Abackground-color%3A%20rgba%280%2C0%2C0%2C0%29%3B%0Atext-align%3A%20center%3B%0Aline-height%3A%201.2%3B"></iframe></div>
       <div class="cell"><iframe src="https://overlays.rtirl.com/datetime/luxon.html?key=nb6dt2kjfeub3423&lang=en&format=tt&css=color%3A%20rgba%28255%2C255%2C0%2C1%29%3B%0Afont-size%3A%2020px%3B%0Afont-family%3A%20Open%20Sans%3B%0Afont-weight%3A%20normal%3B%0Abackground-color%3A%20rgba%280%2C0%2C0%2C0%29%3B%0Atext-align%3A%20center%3B%0Aline-height%3A%201.2%3B"></iframe></div>
       <div class="cell"><iframe src="https://overlays.rtirl.com/weather/temperature/F.html?key=nb6dt2kjfeub3423&css=color%3A%20rgba%28255%2C255%2C0%2C1%29%3B%0Afont-size%3A%2020px%3B%0Afont-family%3A%20Open%20Sans%3B%0Afont-weight%3A%20normal%3B%0Abackground-color%3A%20rgba%280%2C0%2C0%2C0%29%3B%0Atext-align%3A%20center%3B%0Aline-height%3A%201.2%3B"></iframe></div>
