@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+<title>RTIRL Bottom Bar Uniform</title>
+
+<style>
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  overflow: hidden;
+  font-family: Open Sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+#stage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1920px;
+  height: 1080px;
+  transform-origin: 0 0;
+}
+
+#bar {
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  bottom: 40px;
+  height: 96px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  gap: 14px;
+  padding: 14px;
+  background: rgba(0,0,0,0.4);
+  border-radius: 22px;
+}
+
+.cell {
+  position: relative;
+  border-radius: 14px;
+  background: rgba(0,0,0,0.25);
+  overflow: hidden;
+}
+
+iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: transparent;
+  pointer-events: none;
+}
+</style>
+</head>
+
+<body>
+<div id="stage">
+  <div id="bar">
+    <div class="cell"><iframe src="https://overlays.rtirl.com/neighborhood.html?key=nb6dt2kjfeub3423&lang=en&format=%24%7Bdata.neighborhood%20%3F%20data.neighborhood.text%20%2B%20'%2C%20'%20%3A%20''%7D%24%7Bdata.place%20%3F%20data.place.text%20%3A%20''%7D&css=Y29sb3I6IHJnYmEoMjU1LCAyNTUsIDAsIDEpOwpmb250LXNpemU6IDI0cHg7CmZvbnQtZmFtaWx5OiBPcGVuIFNhbnM7CmZvbnQtd2VpZ2h0OiBub3JtYWw7CmJhY2tncm91bmQtY29sb3I6IHJnYmEoMCwgMCwgMCwgMCk7"></iframe></div>
+    <div class="cell"><iframe src="https://overlays.rtirl.com/speed/mph.html?key=nb6dt2kjfeub3423&css=Y29sb3I6IHJnYmEoMjU1LCAyNTUsIDAsIDEpOwpmb250LXNpemU6IDI0cHg7CmZvbnQtZmFtaWx5OiBPcGVuIFNhbnM7CmZvbnQtd2VpZ2h0OiBub3JtYWw7CmJhY2tncm91bmQtY29sb3I6IHJnYmEoMCwgMCwgMCwgMCk7"></iframe></div>
+    <div class="cell"><iframe src="https://overlays.rtirl.com/datetime/luxon.html?key=nb6dt2kjfeub3423&lang=en&format=tt&css=Y29sb3I6IHJnYmEoMjU1LCAyNTUsIDAsIDEpOwpmb250LXNpemU6IDI0cHg7CmZvbnQtZmFtaWx5OiBPcGVuIFNhbnM7CmZvbnQtd2VpZ2h0OiBub3JtYWw7CmJhY2tncm91bmQtY29sb3I6IHJnYmEoMCwgMCwgMCwgMCk7"></iframe></div>
+    <div class="cell"><iframe src="https://overlays.rtirl.com/weather/temperature/F.html?key=nb6dt2kjfeub3423&css=Y29sb3I6IHJnYmEoMjU1LCAyNTUsIDAsIDEpOwpmb250LXNpemU6IDI0cHg7CmZvbnQtZmFtaWx5OiBPcGVuIFNhbnM7CmZvbnQtd2VpZ2h0OiBub3JtYWw7CmJhY2tncm91bmQtY29sb3I6IHJnYmEoMCwgMCwgMCwgMCk7"></iframe></div>
+    <div class="cell"><iframe src="https://overlays.rtirl.com/distance/miles.html?key=nb6dt2kjfeub3423&css=Y29sb3I6IHJnYmEoMjU1LCAyNTUsIDAsIDEpOwpmb250LXNpemU6IDI0cHg7CmZvbnQtZmFtaWx5OiBPcGVuIFNhbnM7CmZvbnQtd2VpZ2h0OiBub3JtYWw7CmJhY2tncm91bmQtY29sb3I6IHJnYmEoMCwgMCwgMCwgMCk7"></iframe></div>
+  </div>
+</div>
+
+<script>
+(function() {
+  var stage = document.getElementById('stage');
+  var baseW = 1920, baseH = 1080;
+
+  function scale() {
+    var w = window.innerWidth || document.documentElement.clientWidth || baseW;
+    var h = window.innerHeight || document.documentElement.clientHeight || baseH;
+    var s = Math.min(w / baseW, h / baseH);
+    stage.style.transform = 'scale(' + s + ')';
+  }
+
+  window.addEventListener('resize', scale);
+  window.addEventListener('orientationchange', scale);
+  scale();
+  setTimeout(scale, 200);
+})();
+</script>
+</body>
+</html>
